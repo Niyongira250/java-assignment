@@ -1,0 +1,291 @@
+java programming assignment answers 
+1. check if entered number is even or odd
+
+package com.mycompany.evenoddcheck;
+
+import java.util.Scanner;
+public class Evenoddcheck {
+
+     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        // Prompt user for input
+        System.out.print("Enter a number: ");
+        int number = scanner.nextInt();
+        
+        // Check if the number is even or odd
+        if (number % 2 == 0) {
+            System.out.println(number + " is an even number.");
+        } else {
+            System.out.println(number + " is an odd number.");
+        }
+        
+        scanner.close();
+    }
+}
+
+2.enter grade and display output
+
+import java.util.Scanner;
+public class Gradecheck {
+
+  public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        // Prompt user for input
+        System.out.print("Enter your grade (A, B, C, D, F): ");
+        char grade = scanner.next().toUpperCase().charAt(0); // Convert to uppercase for consistency
+        
+        // Determine the message based on the grade using switch statement
+        switch (grade) {
+            case 'A':
+                System.out.println("Excellent! Keep up the great work!");
+                break;
+            case 'B':
+                System.out.println("Well done! Good job!");
+                break;
+            case 'C':
+                System.out.println("You passed! But needs improvement.");
+                break;
+            case 'D':
+                System.out.println("You need to work harder. Don't give up!");
+                break;
+            case 'F':
+                System.out.println("Failing is part of learning. Try again!");
+                break;
+            default:
+                System.out.println("Invalid grade entered. Please enter A, B, C, D, or F.");
+        }
+        
+        scanner.close();
+    }
+}
+
+
+3. java program for leap or whole year
+import java.util.Scanner;
+public class Whole_and_leap_year {
+
+    public static void main(String[] args) {
+       Scanner scanner = new Scanner(System.in);
+        
+        // Prompt user for input
+        System.out.print("Enter a year: ");
+        int year = scanner.nextInt();
+        
+        // Check if the year is a leap year
+        boolean isLeapYear = false;
+
+        if (year % 4 == 0) {
+            if (year % 100 == 0) {
+                if (year % 400 == 0) {
+                    isLeapYear = true; // Divisible by 400
+                }
+            } else {
+                isLeapYear = true; // Divisible by 4 but not by 100
+            }
+        }
+
+        // Output result
+        if (isLeapYear) {
+            System.out.println(year + " is a leap year.");
+        } else {
+            System.out.println(year + " is not a leap year.");
+        }
+
+        scanner.close();
+    }
+}
+
+4.finding the largest number
+
+import java.util.Scanner;
+public class Thelargest {
+
+    public static void main(String[] args) {
+          Scanner scanner = new Scanner(System.in);
+        
+        // Prompt user for input
+        System.out.print("Enter the first number: ");
+        int num1 = scanner.nextInt();
+        
+        System.out.print("Enter the second number: ");
+        int num2 = scanner.nextInt();
+        
+        System.out.print("Enter the third number: ");
+        int num3 = scanner.nextInt();
+        
+        // Determine the largest number using if-else-if statements
+        if (num1 >= num2 && num1 >= num3) {
+            System.out.println(num1 + " is the largest number.");
+        } else if (num2 >= num1 && num2 >= num3) {
+            System.out.println(num2 + " is the largest number.");
+        } else {
+            System.out.println(num3 + " is the largest number.");
+        }
+        
+        scanner.close();
+    }
+}
+
+5. checking if it is negative, positive or zero
+
+import java.util.Scanner;
+public class Checknumber {
+
+    public static void main(String[] args) {
+      Scanner scanner = new Scanner(System.in);
+        
+        // Prompt user for input
+        System.out.print("Enter a number: ");
+        double number = scanner.nextDouble();
+        
+        // Check whether the number is positive, negative, or zero
+        if (number > 0) {
+            System.out.println(number + " is a positive number.");
+        } else if (number < 0) {
+            System.out.println(number + " is a negative number.");
+        } else {
+            System.out.println("The number is zero.");
+        }
+        
+        scanner.close();
+    }
+}
+
+6.triangle pattern
+public class Trianglepattern {
+
+    public static void main(String[] args) {
+        int rows = 7; // Number of rows for the triangle
+        
+        for (int i = 1; i <= rows; i++) { // Loop for each row
+            for (int j = 1; j <= i; j++) { // Loop for printing numbers in each row
+                System.out.print(j + ""); // Print numbers from 1 to i
+            }
+            System.out.println(); // Move to the next line after each row
+        }
+    }
+7. displaying diamond according to the input of rows from user
+
+import java.util.Scanner;
+public class Diamond {
+
+    public static void main(String[] args) {
+         Scanner scanner = new Scanner(System.in);
+
+        // Prompt user for input
+        System.out.print("Enter the number of rows for the diamond: ");
+        int rows = scanner.nextInt();
+
+        // Upper part of the diamond
+        for (int i = 1; i <= rows; i++) {
+            // Print spaces
+            for (int j = i; j < rows; j++) {
+                System.out.print(" ");
+            }
+            // Print stars
+            for (int j = 1; j <= (2 * i - 1); j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
+        // Lower part of the diamond
+        for (int i = rows - 1; i >= 1; i--) {
+            // Print spaces
+            for (int j = rows; j > i; j--) {
+                System.out.print(" ");
+            }
+            // Print stars
+            for (int j = 1; j <= (2 * i - 1); j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
+        scanner.close();
+    }
+}
+
+8. calculating average of array elements
+
+public class Arrayaverage {
+
+    public static void main(String[] args) {
+            // Input array
+        int[] array = {10, 12, 34, 23, 56, 78};
+        
+        // Calculate the sum of the array elements
+        int sum = 0;
+        for (int number : array) {
+            sum += number;
+        }
+        
+        // Calculate the average
+        double average = (double) sum / array.length;
+        
+        // Print the average
+        System.out.println("The average of the array elements is: " + average);
+    }
+}
+
+9. reversing an array
+
+public class Reverse {
+
+    public static void main(String[] args) {
+        // Input array
+        int[] array = {3, 4, 6, 1, 9, 7, 5, 8};
+        
+        // Print original array
+        System.out.print("Original Array: ");
+        printArray(array);
+        
+        // Reverse the array using a for loop
+        for (int i = 0; i < array.length / 2; i++) {
+            // Swap elements
+            int temp = array[i];
+            array[i] = array[array.length - 1 - i];
+            array[array.length - 1 - i] = temp;
+        }
+        
+        // Print the reversed array
+        System.out.print("Reversed Array: ");
+        printArray(array);
+    }
+    
+    // Method to print the array using streams
+    public static void printArray(int[] array) {
+        // Using Java Streams to print the array
+        System.out.println(java.util.Arrays.toString(array));
+    }
+}
+
+10. largest interger element in an array
+
+public class Largest {
+
+    public static void main(String[] args) {
+       // Input array
+        int[] array = {34, 23, 12, 45, 67, 89, 234, 26, 10, 30, 43};
+        
+        // Initialize the largest element
+        int largest = array[0]; // Assume the first element is the largest
+        
+        // Loop through the array to find the largest element
+        for (int i = 1; i < array.length; i++) {
+            if (array[i] > largest) {
+                largest = array[i]; // Update largest if current element is greater
+            }
+        }
+        
+        // Print the largest element
+        System.out.println("The largest element in the array is: " + largest);
+    }
+}
+
+
+
+
+
